@@ -9,9 +9,11 @@
 @keyframes fadeOut {
   from {
     opacity: 1;
+    height: 80px;
   }
   to {
     opacity: 0;
+    height: 0;
   }
 }
 @keyframes bounceIn {
@@ -60,6 +62,8 @@ body .benotify-wrapper > div.active > div {
 }
 body .benotify-wrapper > div.removing {
   opacity: 0;
+  height: 0;
+  margin: 0;
   animation: fadeOut 0.8s;
 }
 body .benotify-wrapper > div.removing > div {

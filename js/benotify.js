@@ -32,7 +32,7 @@
 				el.classList.add('removing');
 				setTimeout(function () {
 					el.remove();
-				}, 1400);
+				}, 800);
 				// el.remove();
 			}, (ms || 0))
 		}
