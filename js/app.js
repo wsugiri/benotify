@@ -13,7 +13,7 @@
 
 	document.querySelector('#button2').addEventListener('click', function () {
 		console.log('click 2');
-		benotify.show({ title: 'Gretting', text: 'Good Afternoon' });
+		benotify.show({ title: 'Gretting', text: 'Good Afternoon', timeout: 10000 });
 	})
 
 	document.querySelector('#button3').addEventListener('click', function () {
@@ -22,6 +22,6 @@
 	})
 
 	document.querySelector('#button4').addEventListener('click', function () {
-		console.log('click button 4');
+		benotify.show({ title: 'Gretting', text: 'Good Long Wikend', timeout: 120000 });
 	})
 }());

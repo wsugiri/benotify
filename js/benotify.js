@@ -26,10 +26,14 @@
 
 	function removeElement(id, ms) {
 		if(document.getElementById(id)) {
-			console.log('remove', id, ms);
+			// console.log('remove', id, ms);
 			setTimeout(function () {
 				var el = document.getElementById(id);
-				el.remove();
+				el.classList.add('removing');
+				setTimeout(function () {
+					el.remove();
+				}, 1400);
+				// el.remove();
 			}, (ms || 0))
 		}
 	}
@@ -45,15 +49,18 @@
 
 		var element = document.querySelector(selector);
 		var tmpl = [
-			'<div id={{_id}}>',
+			// '<div id={{_id}}>',
 			'<div class="benotify-title">{{title}}<div>',
 			'<div class="benotify-text">{{text}}</div>',
-			'</div>'
+			// '</div>'
 		];
 
 		option._id = generateUUID();
 		var html = renderHtml(tmpl, option);
-		element.innerHTML += html;
+		var elChild = document.createElement('div');
+		elChild.setAttribute('id', option._id);
+		elChild.innerHTML = renderHtml(tmpl, option);
+		element.appendChild(elChild);
 		list.push(option);
 
 		document.getElementById(option._id).classList.add('active')
